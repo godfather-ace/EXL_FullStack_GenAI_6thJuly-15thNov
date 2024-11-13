@@ -1,0 +1,88 @@
+@prefix schema: <https://schema.org/> .
+
+# Organization
+<https://www.futuretechinstitute.com> a schema:Organization ;
+    schema:name "FutureTech Institute" ;
+    schema:url "https://www.futuretechinstitute.com" ;
+    schema:logo "https://www.futuretechinstitute.com/logo.png" ;
+    schema:description "A leading research institute focused on pioneering advancements in AI, robotics, and sustainability." ;
+    schema:address [
+        a schema:PostalAddress ;
+        schema:streetAddress "789 Science Road" ;
+        schema:addressLocality "Boston" ;
+        schema:addressRegion "MA" ;
+        schema:postalCode "02115" ;
+        schema:addressCountry "US"
+    ] ;
+    schema:contactPoint [
+        a schema:ContactPoint ;
+        schema:telephone "+1-555-555-4000" ;
+        schema:contactType "General Inquiry" ;
+        schema:email "info@futuretechinstitute.com"
+    ] ;
+    schema:event <https://www.futuretechinstitute.com/events/tech-summit-2024> .
+
+# Event
+<https://www.futuretechinstitute.com/events/tech-summit-2024> a schema:Event ;
+    schema:name "Tech Summit 2024" ;
+    schema:startDate "2024-11-15" ;
+    schema:endDate "2024-11-17" ;
+    schema:location <https://www.futuretechinstitute.com/locations/convention-center> ;
+    schema:description "An annual summit showcasing innovative projects in technology and sustainability." ;
+    schema:organizer <https://www.futuretechinstitute.com> ;
+    schema:performer <https://www.futuretechinstitute.com/people/dr-alex-smith>,
+                     <https://www.futuretechinstitute.com/people/ms-lina-kim> ;
+    schema:subEvent <https://www.futuretechinstitute.com/projects/eco-ai>,
+                    <https://www.futuretechinstitute.com/projects/robotics-for-good> .
+
+# Location
+<https://www.futuretechinstitute.com/locations/convention-center> a schema:Place ;
+    schema:name "Boston Convention Center" ;
+    schema:address [
+        a schema:PostalAddress ;
+        schema:streetAddress "101 Tech Lane" ;
+        schema:addressLocality "Boston" ;
+        schema:addressRegion "MA" ;
+        schema:postalCode "02116" ;
+        schema:addressCountry "US"
+    ] ;
+    schema:containsPlace <https://www.futuretechinstitute.com/locations/room-101>,
+                         <https://www.futuretechinstitute.com/locations/room-102> .
+
+<https://www.futuretechinstitute.com/locations/room-101> a schema:Place ;
+    schema:name "Room 101" ;
+    schema:description "Main hall for large project demonstrations and keynote addresses." .
+
+<https://www.futuretechinstitute.com/locations/room-102> a schema:Place ;
+    schema:name "Room 102" ;
+    schema:description "Secondary hall for workshops and small-group discussions." .
+
+# Person (Project Leaders)
+<https://www.futuretechinstitute.com/people/dr-alex-smith> a schema:Person ;
+    schema:name "Dr. Alex Smith" ;
+    schema:jobTitle "Head of AI Research" ;
+    schema:affiliation <https://www.futuretechinstitute.com> ;
+    schema:email "alex.smith@futuretechinstitute.com" .
+
+<https://www.futuretechinstitute.com/people/ms-lina-kim> a schema:Person ;
+    schema:name "Ms. Lina Kim" ;
+    schema:jobTitle "Project Manager - Sustainability Initiatives" ;
+    schema:affiliation <https://www.futuretechinstitute.com> ;
+    schema:email "lina.kim@futuretechinstitute.com" .
+
+# Project (Sub-events of the Event)
+<https://www.futuretechinstitute.com/projects/eco-ai> a schema:Event ;
+    schema:name "Eco-AI Project" ;
+    schema:description "A project focused on developing AI applications for environmental monitoring and protection." ;
+    schema:location <https://www.futuretechinstitute.com/locations/room-101> ;
+    schema:startDate "2024-11-15" ;
+    schema:endDate "2024-11-17" ;
+    schema:performer <https://www.futuretechinstitute.com/people/dr-alex-smith> .
+
+<https://www.futuretechinstitute.com/projects/robotics-for-good> a schema:Event ;
+    schema:name "Robotics for Good" ;
+    schema:description "Showcasing robots designed for disaster relief and humanitarian efforts." ;
+    schema:location <https://www.futuretechinstitute.com/locations/room-102> ;
+    schema:startDate "2024-11-16" ;
+    schema:endDate "2024-11-17" ;
+    schema:performer <https://www.futuretechinstitute.com/people/ms-lina-kim> .
